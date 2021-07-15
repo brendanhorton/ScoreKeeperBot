@@ -1,0 +1,27 @@
+{
+  "name": "scorekeeperbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "heroku": "^7.56.0",
+    "mongoose": "^5.13.2",
+    "nodemon": "^2.0.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Colourised/ScoreKeeperBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Colourised/ScoreKeeperBot/issues"
+  },
+  "homepage": "https://github.com/Colourised/ScoreKeeperBot#readme"
+}
