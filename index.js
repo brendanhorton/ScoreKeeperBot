@@ -1,4 +1,5 @@
 "use strict";
+require('dotenv').config()
 //mongoose instance
 const mongoose = require("mongoose");
 //client instance
@@ -7,11 +8,15 @@ const client = new Discord.Client();
 
 //the highscore server model
 const Highscore = require("./models/highscore");
-const { prefix, token, mongo_uri } = require("./config.json");
+
+//environment variables
+const prefix = process.env.prefix
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN
+const MONGO_URI = process.env.MONGO_URI
 
 //mongoose connection need to change to async
 mongoose
-  .connect(mongo_uri, {
+  .connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -85,7 +90,7 @@ client.on("message", async (message) => {
   }
 });
 
-client.login(token);
+client.login(DISCORD_TOKEN);
 
 //function to print score for people not in top 5
 function printCurrentScore(scores, game, place) {
