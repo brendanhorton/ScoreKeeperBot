@@ -29,7 +29,7 @@ mongoose
 //
 //bot commands
 client.on("ready", () => {
-  console.log("ScoreKeeper is Ready!");
+  console.log("PinBot is Ready!");
 });
 
 //map returned array by game played then by score to return top 5 list
@@ -81,7 +81,7 @@ client.on("message", async (message) => {
         message.channel.send(`CONGRATULATIONS ${name} YOU HAVE THE NEW ALL-TIME TOP SCORE ON ${game.toUpperCase()}!`)
         message.channel.send(printTop5(sortedScores, game))
       } else if (place <= 5) {
-        message.channel.send(`CONGRATULAIONS ${name} YOU HAVE A TOP 5 ALL-TIME SCORE ON ${game.toUpperCase()}`)
+        message.channel.send(`CONGRATULATIONS ${name} YOU HAVE A TOP 5 ALL-TIME SCORE ON ${game.toUpperCase()}`)
         message.channel.send(printTop5(sortedScores, game))
       } else {
         message.channel.send(`Score saved! Keep trying for a top score... you're current score puts you in ${place}`)
@@ -127,7 +127,7 @@ function printTop5(scores, game) {
         break;
       }
 
-      const newLine = `\n ${i + 1}. ${scores[i].name} --- ${scores[i].score}`;
+      const newLine = `\n ${i + 1}. ${scores[i].name} --- ${scores[i].score.toLocaleString()}`;
       leaderboard = leaderboard + newLine;
     }
     return leaderboard
@@ -142,7 +142,7 @@ function printTop3(scores, game) {
      break;
    }
 
-   const newLine = `\n ${i + 1}. ${scores[i].name} --- ${scores[i].score}`;
+   const newLine = `\n ${i + 1}. ${scores[i].name} --- ${scores[i].score.toLocaleString()}`;
    leaderboard = leaderboard + newLine;
  }
  return leaderboard
